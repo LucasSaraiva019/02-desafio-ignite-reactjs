@@ -12,17 +12,17 @@ interface GenreProps {
   selectedGenreId: number
 }
 
-export function SideBar({genre, onClickButton, selectedGenreId}: GenreProps) {
+export function SideBar({ genre, onClickButton, selectedGenreId }: GenreProps) {
 
   function handleClickButton() {
     onClickButton(genre.id)
   }
   return <Button
-              key={String(genre.id)}
-              title={genre.title}
-              iconName={genre.name}
-              onClick={handleClickButton}
-              selected={selectedGenreId === genre.id}
-          />
+    key={String(genre.id)}
+    title={genre.title}
+    iconName={genre.name}
+    onClick={handleClickButton}
+    selected={selectedGenreId === genre.id}
+  />
 
 }
