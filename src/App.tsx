@@ -12,6 +12,7 @@ import './styles/global.scss';
 
 import './styles/sidebar.scss';
 import './styles/content.scss';
+import { SideBar } from './components/SideBar';
 
 interface GenreResponseProps {
   id: number;
@@ -64,14 +65,16 @@ export function App() {
         <span>Watch<p>Me</p></span>
 
         <div className="buttons-container">
+
           {genres.map(genre => (
-            <Button
-              key={String(genre.id)}
-              title={genre.title}
-              iconName={genre.name}
-              onClick={() => handleClickButton(genre.id)}
-              selected={selectedGenreId === genre.id}
-            />
+            <SideBar genre={genre} onClickButton={() => handleClickButton(genre.id)} selectedGenreId={selectedGenreId} key={genre.id}/>
+            // <Button
+            //   key={String(genre.id)}
+            //   title={genre.title}
+            //   iconName={genre.name}
+            //   onClick={() => handleClickButton(genre.id)}
+            //   selected={selectedGenreId === genre.id}
+            // />
           ))}
         </div>
 
